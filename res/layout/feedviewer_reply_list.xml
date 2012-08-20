@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" android:background="#E3F1E2">
+
+    <LinearLayout
+        android:id="@+id/replyProgressLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="800dp"
+        android:background="#55000000"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+	        <ProgressBar
+	            android:id="@+id/replyProgressBar"
+	            style="?android:attr/progressBarStyleLarge"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="Loading..."
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/replyList"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:divider="@drawable/feed_white_divider" android:visibility="gone">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="#B3E29A"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/replyEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="3dp"
+            android:ems="10"
+            android:gravity="center_vertical" >
+        </EditText>
+
+        <Button
+            android:id="@+id/replySubmitButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/reply_submit_button_1"
+            android:text="등록" />
+    </LinearLayout>
+
+</LinearLayout>

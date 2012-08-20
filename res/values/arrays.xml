@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="category">
+        <item>주기활동</item>
+        <item>운동</item>
+        <item>기타</item>
+    </string-array>
+    
+    <string-array name="projects">
+        <item>우물 만들기 프로젝트</item>
+        <item>시링의 집짓기 프로젝트</item>
+        <item>학교만들기 프로젝트</item>
+        <item>기부하기 프로젝트</item>
+    </string-array>
+
+</resources>

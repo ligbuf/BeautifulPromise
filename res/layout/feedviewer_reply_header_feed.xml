@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#E3F1E2">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:background="#FFFFFF">
+
+        <WebView
+            android:id="@+id/profileImage2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <TextView
+            android:id="@+id/nameText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/profileImage2"
+            android:layout_marginLeft="14dp"
+            android:layout_toRightOf="@+id/profileImage2"
+            android:text="Jaemyung Shin"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/dateText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/profileImage2"
+            android:layout_alignLeft="@+id/nameText2"
+            android:text="2012.05.16 PM 2:18"
+            android:textAppearance="?android:attr/textAppearanceSmall" android:textColor="#444444"/>
+
+        <TextView
+            android:id="@+id/percentText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/nameText2"
+            android:layout_marginRight="15dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <WebView
+            android:id="@+id/photoImage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dateText2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"/>
+
+        <TextView
+            android:id="@+id/feedText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/profileImage2"
+            android:layout_alignRight="@+id/percentText2"
+            android:layout_below="@+id/photoImage2"
+            android:layout_marginTop="14dp"
+            android:text="Hello this is a test about facebook feed. This will be full of feed message and blah blah blah blah blah blah" android:textColor="#444444"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/feedText2"
+            android:background="#E3F1E2"
+            android:paddingBottom="4dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/like" android:layout_marginTop="7dp"/>
+
+            <TextView
+                android:id="@+id/likeCountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imageView1"
+                android:text="2"
+                android:textColor="#111111" android:layout_alignBottom="@+id/imageView1"/>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/likeCountText"
+                android:text="명이"
+                android:textColor="#111111" android:layout_alignBottom="@+id/imageView1"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/textView1"
+                android:text="좋아합니다."
+                android:textColor="#111111" android:layout_alignBottom="@+id/imageView1"/>
+
+            <TextView
+                android:id="@+id/likeFeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/textView2"
+                android:text="좋아요"
+                android:textColor="#111111" android:layout_alignBottom="@+id/imageView1"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="@drawable/feed_white_divider">
+    </LinearLayout>
+
+</LinearLayout>

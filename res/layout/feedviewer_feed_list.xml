@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:gravity="center" android:background="#E3F1E2">
+
+    <LinearLayout
+        android:id="@+id/feedProgressLayout"
+        android:layout_width="480dp"
+        android:layout_height="800dp"
+        android:background="#55000000"
+        android:orientation="horizontal" android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/feedProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/feedList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/feed_white_divider"
+        android:visibility="gone" >
+    </ListView>
+
+</LinearLayout>

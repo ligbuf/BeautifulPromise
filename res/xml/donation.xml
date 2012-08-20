@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<donations>
+    <donation id="1" title="'Schools for Asia' 캠페인" details="아시아에 희망의 학교를 선물하세요." 		image="donation/donation_image_1.png" after_image="donation/donation_image_1_after.png" ></donation>
+    <donation id="2" title="'사헬의 아이들 돕기' 캠페인" 	details="지금 어린이의 생명이 위험합니다."			image="donation/donation_image_2.png" after_image="donation/donation_image_2_after.png"></donation>
+    <donation id="3" title="'천 원의 생명수' 캠페인" 		details="아이들에게 깨끗한 물을 선물하세요." 		image="donation/donation_image_3.png" after_image="donation/donation_image_3_after.png"></donation>
+    <donation id="4" title="'사랑의 집 짓기' 캠페인" 		details="스레이니가 꿈 꿀수 있도록 도와주세요." 	image="donation/donation_image_4.png" after_image="donation/donation_image_4_after.png"></donation>
+    <donation id="5" title="'아프리카 식량지원' 캠페인" 	details="굶주림에 신음하는 어린이들을 도와주세요." 	image="donation/donation_image_5.png" after_image="donation/donation_image_5_after.png"></donation>
+    <donation id="6" title="포인트로 적립하기" 			details="포인트샵에서 기부에 참여할 수 있습니다." 	image="donation/donation_image_6.png" after_image="donation/donation_image_6_after.png"></donation>
+</donations>

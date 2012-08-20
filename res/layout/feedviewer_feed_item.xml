@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#EDEDED" android:paddingBottom="10dp">
+
+    <WebView
+        android:id="@+id/profileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/profileImage"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/profileImage"
+        android:text="Jaemyung Shin"
+        android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/profileImage"
+        android:layout_alignLeft="@+id/nameText"
+        android:text="2012.05.16 PM 2:18"
+        android:textAppearance="?android:attr/textAppearanceSmall" android:textColor="#444444"/>
+
+    <WebView
+        android:id="@+id/photoImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:focusable="false" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"/>
+
+    <TextView
+        android:id="@+id/feedText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profileImage"
+        android:layout_below="@+id/photoImage"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="14dp"
+        android:text="Hello this is a test about facebook feed. This will be full of feed message and blah blah blah blah blah blah" android:textColor="#444444"/>
+
+    <RelativeLayout
+        android:id="@+id/feedViewerBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/feedText"
+        android:layout_alignRight="@+id/feedText"
+        android:layout_below="@+id/feedText"
+        android:layout_marginTop="5dp" android:background="@drawable/feed_bottom_bar" android:paddingLeft="4dp" android:paddingRight="4dp" android:paddingBottom="2dp" android:paddingTop="2dp">
+
+        
+        <ImageView
+            android:id="@+id/promiseLogImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/promise_log" android:layout_marginLeft="3dp"/>
+        
+        <TextView
+            android:id="@+id/promiseLogText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="약속일지" android:layout_toRightOf="@id/promiseLogImage" android:layout_marginLeft="3dp" android:textColor="#444444"/>
+
+        <TextView
+            android:id="@+id/replyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="20"
+            android:layout_marginRight="3dp" android:textColor="#444444"/>
+
+        <ImageView
+            android:id="@+id/replyImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/replyText"
+            android:src="@drawable/reply" android:layout_marginRight="3dp"/>
+
+        <TextView
+            android:id="@+id/likeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/replyImage"
+            android:text="20" android:textColor="#444444"/>
+
+        <ImageView
+            android:id="@+id/likeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/likeText"
+            android:src="@drawable/like" android:layout_marginRight="3dp"/>
+                
+        <TextView
+            android:id="@+id/noFriendText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:text="친구아님"
+            android:textSize="15dp" android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

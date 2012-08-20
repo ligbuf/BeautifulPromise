@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pointshopitems>
+    <pointshopitem id="1" title="링 목걸이"	 	price="300" 	image="item/item_ringearring.png" ></pointshopitem>
+    <pointshopitem id="2" title="유리컵 받침" 	price="450"		image="item/item_grassdrip.png" ></pointshopitem>
+    <pointshopitem id="3" title="지브라 엽서" 	price="200" 	image="item/item_zebra.png" ></pointshopitem>
+    <pointshopitem id="4" title="축하 엽서" 	price="200" 	image="item/item_congratulations.png" ></pointshopitem>
+    <pointshopitem id="5" title="파랑새 목걸이" price="320" 	image="item/item_bluebird.png" ></pointshopitem>
+    <pointshopitem id="6" title="하트 목걸이" 	price="280" 	image="item/item_heart.png" ></pointshopitem>
+    <pointshopitem id="7" title="큐브 팔찌" 	price="760" 	image="item/item_cubic.png" ></pointshopitem>
+</pointshopitems>

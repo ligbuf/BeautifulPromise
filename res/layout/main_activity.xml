@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.beautifulpromise.common.view.LockableScrollView
+        android:id="@+id/horizontal_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/ll_in_hscroll"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" >
+
+            <include
+                android:layout_width="300dp"
+                layout="@layout/left_menu_bar" />
+            
+			<FrameLayout
+			    android:id = "@+id/mainFrameLayout"
+	            android:layout_width="320dp"
+	            android:layout_height="match_parent" 
+	            android:orientation="vertical">
+
+	            <LinearLayout 
+	                android:layout_width="fill_parent"
+	                android:paddingTop="55dp"
+	                android:id = "@+id/activity_layout"
+	                android:layout_height="wrap_content"/>
+				    			    
+	            <include
+	                android:layout_width="fill_parent"
+	                layout="@layout/top_menu_bar" android:layout_height="fill_parent"/>
+	            
+			</FrameLayout>
+            
+        </LinearLayout>
+    </com.beautifulpromise.common.view.LockableScrollView>
+
+</LinearLayout>

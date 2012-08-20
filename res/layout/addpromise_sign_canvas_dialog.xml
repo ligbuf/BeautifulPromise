@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="@drawable/popup_bg_gray_plate">
+    
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text = "서명해주세요."
+        android:textSize="20dp"
+        android:textColor="#FF228B22"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"/>
+    
+    <LinearLayout 
+        android:layout_width="240dp"
+        android:layout_height="165dp"
+        android:layout_gravity="center"
+       	android:layout_marginBottom="8dp" 
+       	android:padding="3dp"
+        android:background="@drawable/popup_box_white"
+        android:id = "@+id/sign_view"/>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/okay_button"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/popup_btn_ok_2"
+            android:text = "확인"/>
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:id = "@+id/cancel_button"
+            android:background="@drawable/popup_btn_cancle"
+            android:text = "취소"/>        
+    </LinearLayout>
+</LinearLayout>

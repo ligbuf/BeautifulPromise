@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.beautifulpromise"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	
+	<!-- C2DM -->
+	<!--  오직 이 애플리케이션만이 메시지를 받을 수 있도록 권한을 정의하고 추가 protectionLevel이 signature-->
+	<permission android:name="com.beautifulpromise.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+	<uses-permission android:name="com.beautifulpromise.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        <activity
+            android:name=".application.Intro"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- BeautifulPromiseActivity -->
+
+        <uses-library android:name="com.google.android.maps" />
+
+        <!-- feedViewer -->
+        <activity
+            android:name=".application.feedviewer.PromiseFeedList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="feedviewer.PromiseFeedList" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".application.feedviewer.FeedWithReply"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="feedviewer.FeedWithReply" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".application.feedviewer.PromiseCheck"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="feedviewer.PromiseCheck" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Addpromise -->
+        <activity
+            android:name=".application.addpromise.AddPromiseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="addpromise.AddPromiseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- checkpromise -->
+        <activity
+            android:name=".application.checkpromise.CycleCheckActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="checkpromise.CycleCheckActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".application.checkpromise.EtcCheckActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="checkpromise.EtcCheckActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".application.checkpromise.WorkCheckActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="checkpromise.WorkCheckActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".application.checkpromise.WorkCheckFeedActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="checkpromise.WorkCheckFeedActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- intro -->
+        <activity
+            android:name=".application.HomeActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="HomeActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".application.BeautifulPromiseActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="BeautifulPromiseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".database.NotificationProvider"
+            android:authorities="com.beautifulpromise.database" >
+        </provider>
+        
+        <!-- C2DM -->
+        <receiver
+            android:name="com.beautifulpromise.common.c2dm.C2DMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+
+            <!-- 메시지 수신 -->
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.beautifulpromise" />
+            </intent-filter>
+            <!-- 등록id 수신 -->
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.beautifulpromise" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+     <service 
+            android:name = ".application.intro.NotificationService" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.beautifulpromise.applicaiton.intro.IRemoteService"/>
+                <action android:name="com.beautifulpromise.applicaiton.intro.REMOTE_SERVICE"/>
+            </intent-filter>
+        </service>
+        -->
+
+        <receiver android:name=".common.alarm.AlarmReceiver" >
+        </receiver>
+
+        <activity android:name=".application.PointShopActivity" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="PointShopActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".application.FullBanner"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="FullBanner" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#E3F1E2">
+
+    <WebView
+        android:id="@+id/replyProfileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/replyNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/replyProfileImage"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/replyProfileImage"
+        android:text="Jaemyung Shin"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/replyFeedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/replyNameText"
+        android:layout_below="@+id/replyNameText"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/replyProfileImage"
+        android:text="hello hi good bye this si test .. . .blah blah balh balh this is too long sentence ghahaha" android:textColor="#444444"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/replyFeedText"
+        android:layout_toRightOf="@id/replyProfileImage"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/replyDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="2012/4/12 PM 2:32" android:textColor="#555555"/>
+
+        <TextView
+            android:id="@+id/replyLikeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="좋아요" android:textColor="#555555"/>
+    </LinearLayout>
+
+</RelativeLayout>
