@@ -3,6 +3,7 @@ package com.beautifulpromise.common.alarm;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.common.dto.AddPromiseDTO;
 import com.beautifulpromise.database.DatabaseHelper;
 import com.beautifulpromise.database.GoalsDAO;
@@ -12,7 +13,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 /**
  * 전체 목표에 대해 알람을 호출하는 클래스
  * @author ou
@@ -69,7 +69,7 @@ public class Alarm {
 				Calendar calendar = Calendar.getInstance();
 //				calendar.set(calendar.getTime().getYear(), calendar.getTime().getMonth(), calendar.getTime().getDay(), Promise.getTime(), Promise.getMin());
 //				calendar.set(2012,5,10,17,18);
-				Log.e("ou", Integer.toString(calendar.getTime().getYear())+ Integer.toString(calendar.getTime().getMonth())+ Integer.toString(calendar.getTime().getDay())+Integer.toString(Promise.getTime()) +Integer.toString(Promise.getMin()));
+				Microlog4Android.logger.error("ou - "+Integer.toString(calendar.getTime().getYear())+ Integer.toString(calendar.getTime().getMonth())+ Integer.toString(calendar.getTime().getDay())+Integer.toString(Promise.getTime()) +Integer.toString(Promise.getMin()));
 				calendar.setTimeInMillis(System.currentTimeMillis());
 				calendar.add(Calendar.SECOND, 15);
 

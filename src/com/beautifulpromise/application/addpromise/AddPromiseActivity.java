@@ -11,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.R;
 import com.beautifulpromise.common.dto.AddPromiseDTO;
 import com.beautifulpromise.common.repository.Repository;
@@ -117,7 +117,7 @@ public class AddPromiseActivity extends MapActivity {
 			public boolean onTouch(View v, MotionEvent event) {
 
 				if(event.getAction() == event.ACTION_UP){
-					Log.i("immk", "ACTION_UP");
+					Microlog4Android.logger.info("immk - ACTION_UP");
 					int X = (int) event.getX();
 					int Y = (int) event.getY();
 					
@@ -138,7 +138,7 @@ public class AddPromiseActivity extends MapActivity {
 		            promiseDTO.setLatitue(Double.valueOf(geoPoint.getLatitudeE6()));
 		            promiseDTO.setLongitude(Double.valueOf(geoPoint.getLongitudeE6()));
 		            
-		            Log.i("immk", ""+ Double.valueOf(geoPoint.getLatitudeE6()) + " " + Double.valueOf(geoPoint.getLongitudeE6()));
+		            Microlog4Android.logger.info("immk - "+Double.valueOf(geoPoint.getLatitudeE6()) + " " + Double.valueOf(geoPoint.getLongitudeE6()));
 				}
 				return false;
 			}
@@ -179,7 +179,7 @@ public class AddPromiseActivity extends MapActivity {
 //		GoalsDAO dao = new GoalsDAO(databaseHelper);
 //		ArrayList<AddPromiseDTO> aa = dao.getList();
 //		ArrayList<AddPromiseDTO> bb = dao.getGoalList(2);
-//		Log.i("immk", bb.get(0).getTitle());
+//		Microlog4Android.logger.info("immk - "+bb.get(0).getTitle());
 		
 //		Controller ctr = new Controller();
 //		ArrayList<String> aa = ctr.GetTodoList("me");

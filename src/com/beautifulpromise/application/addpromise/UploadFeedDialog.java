@@ -12,7 +12,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -280,7 +279,7 @@ public class UploadFeedDialog extends Dialog{
 				DatabaseHelper databaseHelper = new DatabaseHelper(context);
 				GoalsDAO dao = new GoalsDAO(databaseHelper);
 				boolean isCheck = dao.insert(promiseDTO);
-//				Log.i("immk", "" + isCheck);
+//				MicroLog4Android.logger.info("immk - "+isCheck);
 				count++;
 				return 0L;
 			}

@@ -13,7 +13,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -23,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.R;
 import com.beautifulpromise.application.addpromise.UploadFeedDialog.Builder.DatabaseAsynTask;
 import com.beautifulpromise.application.addpromise.UploadFeedDialog.Builder.ServerAsynTask;
@@ -350,7 +350,7 @@ public class UploadDonationLetterDialog extends Dialog{
 				else
 					aa = ctr.DonationPointToProject(addPromiseDTO.getDonationId(), 150);
 				
-				Log.i("immk", "aa : " + aa);
+				Microlog4Android.logger.info("immk - aa : "+aa);
 				
 				return 0L;
 			}
