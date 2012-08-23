@@ -32,6 +32,8 @@ import java.net.URLEncoder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
+
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.os.Bundle;
@@ -323,7 +325,7 @@ public final class Util {
      */
     public static void logd(String tag, String msg) {
         if (ENABLE_LOG) {
-            Log.d(tag, msg);
+        	Log.d(tag, msg);
         }
     }
 }

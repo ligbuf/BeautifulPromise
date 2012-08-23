@@ -1,5 +1,7 @@
 package com.beautifulpromise.application;
 
+import org.slf4j.impl.MicrologLoggerAdapter;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
@@ -21,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.R;
 import com.beautifulpromise.common.Var;
 import com.beautifulpromise.common.repository.Repository;
@@ -30,6 +33,10 @@ import com.beautifulpromise.facebooklibrary.SessionStore;
 import com.facebook.halo.application.types.Notifications;
 import com.facebook.halo.application.types.User;
 import com.facebook.halo.framework.core.Connection;
+import com.google.code.microlog4android.format.PatternFormatter;
+
+
+import com.google.code.microlog4android.*;
 
 /**
  * Side navigation + Top menu bar를 담고 있는 액티비티
@@ -126,7 +133,8 @@ public class BeautifulPromiseActivity extends Activity{
 		adapter = new NotificationAdapter(this, cursor);
 		notificationListView.setAdapter(adapter);
 		
-		visibleNewImage();
+	    visibleNewImage();
+
 	} 
 	
 	/**

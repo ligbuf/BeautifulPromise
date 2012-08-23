@@ -157,7 +157,7 @@
             android:layout_marginTop="3dp"
             android:textSize="10dp"
             android:text="http://www.enjoybazar.com/appLink"
-            android:textColor="#FF000000" />
+            android:textColor="#FF000000" />
         -->
 
         <LinearLayout

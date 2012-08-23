@@ -52,7 +52,7 @@
                 android:visibility="invisible" />
         </FrameLayout>
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/notification_layout"
         android:layout_width="250dp"

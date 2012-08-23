@@ -22,7 +22,8 @@
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" 
+        android:debuggable="true">
         <activity
             android:name=".application.Intro"
             android:label="@string/app_name"

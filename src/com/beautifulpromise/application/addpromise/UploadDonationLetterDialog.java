@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle.Control;
+import java.util.ResourceBundle;	//이게 뭔지 몰라도 수정했음 .contorl 붙어있음
 
 import android.app.Activity;
 import android.app.Dialog;

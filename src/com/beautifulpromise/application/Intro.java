@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.R;
 import com.beautifulpromise.application.intro.NotificationService;
 import com.beautifulpromise.common.Var;
@@ -73,6 +74,15 @@ public class Intro extends Activity {
 			loginButton.setVisibility(View.VISIBLE);
 			loginButton.setOnClickListener(buttonClickListener);
 		}
+		
+		/**
+		 * microlog4 android initialize
+		 */
+		Microlog4Android.init();
+		//test log
+		
+		Microlog4Android.logger.info("Succesed");
+		
 	}
 	
 	/**

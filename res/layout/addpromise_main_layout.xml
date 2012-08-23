@@ -101,7 +101,7 @@
                         android:background="@drawable/box_green"
                         android:gravity="center"
                         android:paddingLeft="10dp"
-                        android:prompt="@string/category" />
+                        android:prompt="@string/category" />
                 -->
 
 
