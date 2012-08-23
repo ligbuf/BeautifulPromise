@@ -268,7 +268,7 @@ public class BeautifulPromiseActivity extends Activity{
 	 * notification 변경된 부분 refresh
 	 */
 	public void refreshNotification() {
-		Log.e("Refresh", "notification");
+		Microlog4Android.logger.error("Refresh"+"notification");
 		User user = Repository.getInstance().getUser();
 		notificaitons = user.notifications();
 		if (notificaitons.getData().size() > 0) {

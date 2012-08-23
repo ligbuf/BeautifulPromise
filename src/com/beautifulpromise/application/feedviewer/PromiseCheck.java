@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.R;
 import com.beautifulpromise.application.addpromise.AddPromiseActivity;
 import com.beautifulpromise.application.addpromise.RepeatDayDialog;
@@ -163,7 +164,7 @@ public class PromiseCheck extends Activity {
 			 * 가져온 데이터를 arrayList에 담음
 			 */
 			for(String s : checkList) {
-				Log.e("s : ", "" + s);
+				Microlog4Android.logger.error("s : "+"" + s);
 				feed = new Post();
 				feed = feed.createInstance(s);
 				if(feed != null ) {

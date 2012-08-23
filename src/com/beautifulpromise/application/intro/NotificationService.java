@@ -1,5 +1,7 @@
 package com.beautifulpromise.application.intro;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
+
 import android.app.Service;
 import android.content.Intent;
 import android.os.Handler;
@@ -22,13 +24,13 @@ public class NotificationService extends Service implements Runnable{
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
-		Log.i("immk", "Service Start!");
+		Microlog4Android.logger.info("immk"+ " Service Start!");
 	}
 	
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		Log.i("immk", "Service Stop!");
+		Microlog4Android.logger.info("immk"+" Service Stop!");
 		//TODO 서비스 중단
 	}
 
@@ -38,7 +40,7 @@ public class NotificationService extends Service implements Runnable{
 		public void unregisterCallback(IRemoteServiceCallback callback) throws RemoteException {
 			// TODO Auto-generated method stub
 			if(callback != null){
-				Log.i("immk", "1");
+				Microlog4Android.logger.info("immk"+" 1");
 			}
 			
 		}
@@ -49,7 +51,7 @@ public class NotificationService extends Service implements Runnable{
 				callbackList.register(callback);
 				mHandler = new Handler();
 				Thread thread = new Thread();
-				Log.i("immk", "2");
+				Microlog4Android.logger.info("immk"+ " 2");
 			}
 		}
 		
@@ -69,7 +71,7 @@ public class NotificationService extends Service implements Runnable{
 			default:
 				break;
 			}
-			Log.i("immk", "3");
+			Microlog4Android.logger.info("immk"+" 3");
 			return null;
 		}
 	};
