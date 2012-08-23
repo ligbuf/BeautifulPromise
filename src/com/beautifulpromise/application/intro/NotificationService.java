@@ -1,6 +1,6 @@
 package com.beautifulpromise.application.intro;
 
-import com.beatutifulpromise.common.log.Microlog4Android;
+import com.beautifulpromise.common.log.Microlog4Android;
 
 import android.app.Service;
 import android.content.Intent;

@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.beatutifulpromise.common.log.Microlog4Android;
+import com.beautifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.R;
 import com.beautifulpromise.common.Var;
 import com.beautifulpromise.common.repository.Repository;
