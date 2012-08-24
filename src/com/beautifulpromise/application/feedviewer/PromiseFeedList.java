@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.R;
 import com.beautifulpromise.application.BeautifulPromiseActivity;
 import com.beautifulpromise.common.repository.Repository;
@@ -111,20 +112,24 @@ public class PromiseFeedList extends BeautifulPromiseActivity{
 		@Override
 		protected Long doInBackground(URL... params) {
 			if(isCheck) { //약속일지 피드 뿌려주는 부분일경우
-				Log.e("FEED id ", feedId);
+				//Log.e("FEED id ", feedId);
+				Microlog4Android .logger.error("FEED id "+" - "+ feedId);
 				toDoList = ctrl.GetCheckList(feedId);
 			} else { //me, helper, all 경우
 				//서버에서 피드 리스트 가져옴
 				toDoList = ctrl.GetTodoList(mode);		
-				Log.e("toDoList mode :" + mode, "" + toDoList);
+				//Log.e("toDoList mode :" + mode, "" + toDoList);
+				Microlog4Android .logger.error("toDoList mode :" + mode+" - "+ "" + toDoList);
 			}
 			
 			//가져온 데이터를 arrayList에 담음
 			for(String s : toDoList) {
 //				Log.e("s : ", "" + s);
+				Microlog4Android .logger.error("FEED id "+" - "+ feedId);
 				feed = new Post();
 				feed = feed.createInstance(s);
 //				Log.e("feed : ", "" + feed);
+				Microlog4Android .logger.error("FEED id "+" - "+ feedId);
 				if(feed != null ) {
 					feedItem = new FeedItemDTO(feed);
 					arrayFeedItem.add(feedItem);

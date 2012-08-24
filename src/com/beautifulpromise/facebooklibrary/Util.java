@@ -161,6 +161,7 @@ public final class Util {
             url = url + "?" + encodeUrl(params);
         }
         Util.logd("Facebook-Util", method + " URL: " + url);
+        Microlog4Android.logger.
         HttpURLConnection conn =
             (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestProperty("User-Agent", System.getProperties().
@@ -325,7 +326,8 @@ public final class Util {
      */
     public static void logd(String tag, String msg) {
         if (ENABLE_LOG) {
-        	Log.d(tag, msg);
+        	//Log.d(tag, msg);
+        	Microlog4Android.logger.debug(tag+" - "+msg);
         }
     }
 }

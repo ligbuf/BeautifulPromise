@@ -8,6 +8,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
@@ -126,12 +128,14 @@ public class ImageUtils {
 		int h = bitmap.getHeight();
 		if(w > dstWidth) {
 			dstHeight = h - Math.round(((float)(w - dstWidth)/w)*dstHeight);
-			Log.d("haha", "dstHeight:" + dstHeight + ", h:" + h);
+			//Log.d("haha", "dstHeight:" + dstHeight + ", h:" + h);
+			Microlog4Android.logger.debug("haha"+" - "+ "dstHeight:" + dstHeight + ", h:" + h);
 			Bitmap resized = Bitmap.createScaledBitmap(bitmap, dstWidth, dstHeight, true);
 			return resized;
 		}else if(h > dstHeight) {
 			dstWidth = w - Math.round(((float)(h - dstHeight)/h)*dstWidth);
-			Log.d("haha", "dstWidth:" + dstWidth + ", w:" + w);
+			//Log.d("haha", "dstWidth:" + dstWidth + ", w:" + w);
+			Microlog4Android.logger.debug("haha"+" - "+ "dstWidth:" + dstWidth + ", w:" + w);
 			Bitmap resized = Bitmap.createScaledBitmap(bitmap, dstWidth, dstHeight, true);
 			return resized;
 		}

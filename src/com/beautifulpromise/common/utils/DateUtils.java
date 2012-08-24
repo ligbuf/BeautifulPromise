@@ -8,6 +8,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import com.beatutifulpromise.common.log.Microlog4Android;
+
 import android.util.Log;
 
 /**
@@ -120,6 +122,7 @@ public class DateUtils {
 		try {
 			date = (Date) formatter.parse(dateStr);
 //			Log.i("immk", ""+date.toString());
+			Microlog4Android.logger.info("immk"+" - "+""+date.toString());
 			formatter = new SimpleDateFormat ("yyyyMMdd");
 			return formatter.format(date);
 		} catch (ParseException e) {
