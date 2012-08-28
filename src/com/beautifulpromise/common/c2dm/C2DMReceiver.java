@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.beautifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.application.BeautifulPromiseActivity;
 import com.beautifulpromise.common.Var;
 import com.beautifulpromise.common.repository.Repository;
@@ -29,7 +30,7 @@ public class C2DMReceiver extends BroadcastReceiver{
 	 */
 	@Override
 	public void onReceive(Context context, Intent intent) {
-        Log.e("###############", "onReceive");
+        Microlog4Android.logger.error("############### - onReceive");
         if (intent.getAction().equals("com.google.android.c2dm.intent.REGISTRATION")) {
             handleRegistration(context, intent);
         } else if (intent.getAction().equals("com.google.android.c2dm.intent.RECEIVE")) {
@@ -43,7 +44,7 @@ public class C2DMReceiver extends BroadcastReceiver{
      * @param intent
      */
     private void handleRegistration(Context context, Intent intent) {
-        Log.e("###############", "handleRegistration");
+        Microlog4Android.logger.error("############### - handleRegistration");
         
         /**c2dm 등록에 필요한 id*/
         String registration = intent.getStringExtra("registration_id");
@@ -54,12 +55,12 @@ public class C2DMReceiver extends BroadcastReceiver{
         if (intent.getStringExtra("error") != null) {
             // Registration failed, should try again later.
         } else if (intent.getStringExtra("unregistered") != null) {
-            Log.e("@@@@@@@@unregistered", "unregistered");
+            Microlog4Android.logger.error("@@@@@@@@unregistered - unregistered");
         } else if (registration != null) {
            // Send the registration ID to the 3rd party site that is sending the messages.
            // This should be done in a separate thread.
            // When done, remember that all registration is done. 
-            Log.e("@@@@@@@@registration_id", registration);
+            Microlog4Android.logger.error("@@@@@@@@registration_id - "+registration);
             MessageDeliverer md = new MessageDeliverer(context, "registration", facebookId, registration);
             md.start();
         }
@@ -71,15 +72,14 @@ public class C2DMReceiver extends BroadcastReceiver{
      * @param intent
      */
     private void handleMessage(Context context, Intent intent) {
-        Log.e("###############", "handleMessage");
+        Microlog4Android.logger.error("############### - handleMessage");
         /**받은 메시지*/
         String msg = null;
         
         /**메시지를 받아올 index*/
         String new_id = intent.getStringExtra("new_id");
         if (new_id != null) {
-            Log.e("handleMessage",
-                "new_id: " + intent.getStringExtra("new_id"));
+            Microlog4Android.logger.error("handleMessage - new_id: " + intent.getStringExtra("new_id"));
         }
         
         // 서버에 접속해 메시지를 받아온다.
@@ -116,7 +116,7 @@ public class C2DMReceiver extends BroadcastReceiver{
             is.close();
             conn.disconnect();
             String sdata = sb.toString().trim();
-            Log.e("get Push MSG", "sdata:" + sdata);
+            Microlog4Android.logger.error("get Push MSG - sdata:" + sdata);
 //            String[] arr_sdata = sdata.split("\n");
             message = sdata;
           } catch (MalformedURLException e) {

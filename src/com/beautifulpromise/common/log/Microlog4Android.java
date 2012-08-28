@@ -24,36 +24,45 @@ public class Microlog4Android {
 	 * TODO Microlog4Android 초기화
 	 * @author JeongSeungsu
 	 */
-	public static void init(String Appender)
+	public static void init(String appendername)
 	{
+		try
+		{
 		PatternFormatter formatter = new PatternFormatter();
 		formatter.setPattern("   %d{ISO8601}    [%P]  %m  %T  ");
         logger.setLevel(Level.DEBUG);
+        
+        String[] StrArray;
 
-		String[] StrArray;
+		StrArray = appendername.split("\\|");
 
-		StrArray = Appender.split("\\|");
-
-		for (String s : StrArray) 
-		{
-			if (s.equals("LogCatAppender")) 
-			{
-				// write to LogCat
-				LogCatAppender logCatAppender = new LogCatAppender();
-				logCatAppender.setFormatter(formatter);
-				logger.addAppender(logCatAppender);
-			}
-			if (s.equals("FileAppender")) 
-			{
-				// wirte to text file of SD-card. (need WRITE_EXTERNAL_STORAGE
-				// permission)
-				FileAppender fileAppender = new FileAppender();
-				fileAppender.setAppend(true);
-				fileAppender.setFileName("BeautifulPromise.log");
-				fileAppender.setFormatter(formatter);
-				logger.addAppender(fileAppender);
-			}
+		for (String s : StrArray) {
+			
+			Appender appender =  InitAppender(s);
+			
+			appender.setFormatter(formatter);
+			logger.addAppender(appender);
 		}
+		}
+		catch(Exception e){ //인스턴스(new)실패시에 대한 예외사항   
+			  e.printStackTrace();
+		}  
+		
 	}
+	
+	private static Appender InitAppender(String appendername) {
+		
+			Log4Appender appender = null;
+			if (appendername.equals("LogCatAppender")) {
+				appender = new Log4LogCat();
+			}
+			if (appendername.equals("FileAppender")) {
+				appender = new Log4File();
+			}
+			appender.CreateAppender();
+			return appender.GetAppender();
+	}
+		
+
 	
 }

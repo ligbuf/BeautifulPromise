@@ -10,6 +10,8 @@ import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.beautifulpromise.common.log.Microlog4Android;
+
 public class NotificationService extends Service implements Runnable{
 	
 	final RemoteCallbackList<IRemoteServiceCallback> callbackList = new RemoteCallbackList<IRemoteServiceCallback>();
@@ -24,12 +26,14 @@ public class NotificationService extends Service implements Runnable{
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
+
 		Microlog4Android.logger.info("immk"+ " Service Start!");
 	}
 	
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
+
 		Microlog4Android.logger.info("immk"+" Service Stop!");
 		//TODO 서비스 중단
 	}
@@ -40,6 +44,7 @@ public class NotificationService extends Service implements Runnable{
 		public void unregisterCallback(IRemoteServiceCallback callback) throws RemoteException {
 			// TODO Auto-generated method stub
 			if(callback != null){
+
 				Microlog4Android.logger.info("immk"+" 1");
 			}
 			
@@ -51,6 +56,7 @@ public class NotificationService extends Service implements Runnable{
 				callbackList.register(callback);
 				mHandler = new Handler();
 				Thread thread = new Thread();
+
 				Microlog4Android.logger.info("immk"+ " 2");
 			}
 		}
@@ -60,7 +66,8 @@ public class NotificationService extends Service implements Runnable{
 			
 			switch (message) {
 			case 0:
-				Log.i("immk", "message : " +message);
+				//Log.i("immk", "message : " +message);
+				Microlog4Android.logger.info("immk"+" - "+"message : " +message);
 //				callbackList.getBroadcastItem(0);
 //				int i = 0 ;
 //				User user = Repository.getInstance().getUser();
@@ -71,6 +78,7 @@ public class NotificationService extends Service implements Runnable{
 			default:
 				break;
 			}
+
 			Microlog4Android.logger.info("immk"+" 3");
 			return null;
 		}

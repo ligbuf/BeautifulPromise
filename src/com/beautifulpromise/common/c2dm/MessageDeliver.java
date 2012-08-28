@@ -7,8 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.content.Context;
-import android.util.Log;
 
+import com.beautifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.common.Var;
 import com.facebook.halo.framework.common.AccessToken;
 
@@ -53,11 +53,11 @@ class MessageDeliverer extends Thread {
      */
     public void run() {
       if (facebookId == null || facebookId.equals("")) {
-        Log.e("MessageDeliverer", "Macaddress is invalid");
+        Microlog4Android.logger.error("MessageDeliverer - Macaddress is invalid");
         return;
       }
       if (message == null || message.equals("")) {
-        Log.e("MessageDeliverer", "Message is empty");
+        Microlog4Android.logger.error("MessageDeliverer - Message is empty");
         return;
       }
       try {
@@ -74,7 +74,7 @@ class MessageDeliverer extends Thread {
         conn.setConnectTimeout(60000);
         conn.setReadTimeout(60000);
         conn.setUseCaches(false);
-        Log.e("MessageDeliverer", "Message send URL: " + idRegistrationUrl.toString());
+        Microlog4Android.logger.error("MessageDeliverer - Message send URL: " + idRegistrationUrl.toString());
         // URL에 접속
         InputStream is = conn.getInputStream();
         is.close();

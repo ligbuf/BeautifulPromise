@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import junit.framework.TestFailure;
 
+import com.beautifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.common.dto.AddPromiseDTO;
 
 import android.content.ContentValues;
@@ -89,7 +90,8 @@ public class CheckDAO {
 			row.put("feedcheck", check);
 			db.update("feed", row, "promiseid=" + id, null);
 		} catch (Exception e) {
-			Log.e("ou", e.toString());
+			//Log.e("ou", e.toString());
+			Microlog4Android.logger.error("ou"+" - "+e.toString());
 			return false;
 		}
 		return true;
@@ -110,7 +112,8 @@ public class CheckDAO {
 			row.put("feedcheck", check);
 			db.insert("feed", null ,row);
 		} catch (Exception e) {
-			Log.e("ou", e.toString());
+			//Log.e("ou", e.toString());
+			Microlog4Android.logger.error("ou"+" - "+e.toString());
 			return false;
 		}
 		return true;
@@ -157,7 +160,8 @@ public class CheckDAO {
 				db.insert("feed", null, row);
 			}
 		} catch (Exception e) {
-			Log.e("ou", e.toString());
+			//Log.e("ou", e.toString());
+			Microlog4Android.logger.error("ou"+" - "+e.toString());
 			return false;
 		}
 		return true;		

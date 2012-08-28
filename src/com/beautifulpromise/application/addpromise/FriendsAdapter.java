@@ -17,7 +17,6 @@
 package com.beautifulpromise.application.addpromise;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +32,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.beautifulpromise.common.log.Microlog4Android;
 import com.facebook.halo.application.types.connection.Friends;
 
 /**
@@ -370,7 +370,7 @@ public class FriendsAdapter<T> extends BaseAdapter implements Filterable {
 
     private View createViewFromResource(int position, View convertView, ViewGroup parent, int resource) {
         View view;
-        TextView text;
+        TextView text=null;
 
         if (convertView == null) {
             view = mInflater.inflate(resource, parent, false);
@@ -387,9 +387,8 @@ public class FriendsAdapter<T> extends BaseAdapter implements Filterable {
                 text = (TextView) view.findViewById(mFieldId);
             }
         } catch (ClassCastException e) {
-            Log.e("ArrayAdapter", "You must supply a resource ID for a TextView");
-            throw new IllegalStateException(
-                    "ArrayAdapter requires the resource ID to be a TextView", e);
+        	Microlog4Android.logger.error("ArrayAdapter - You must supply a resource ID for a TextView",
+        			new IllegalStateException("ArrayAdapter requires the resource ID to be a TextView", e));
         }
 
         Friends item = (Friends) getItem(position);

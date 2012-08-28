@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 
 import android.util.Log;
 
+import com.beautifulpromise.common.log.Microlog4Android;
 import com.beautifulpromise.facebooklibrary.AsyncFacebookRunner.RequestListener;
 
 /**
@@ -16,24 +17,28 @@ import com.beautifulpromise.facebooklibrary.AsyncFacebookRunner.RequestListener;
 public abstract class BaseRequestListener implements RequestListener {
 
     public void onFacebookError(FacebookError e, final Object state) {
-        Log.e("Facebook", e.getMessage());
+       // Log.e("Facebook", e.getMessage());
+    	Microlog4Android.logger.error("Facebook"+" - "+e.getMessage());
         e.printStackTrace();
     }
 
     public void onFileNotFoundException(FileNotFoundException e,
                                         final Object state) {
-        Log.e("Facebook", e.getMessage());
+      //  Log.e("Facebook", e.getMessage());
+    	Microlog4Android.logger.error("Facebook"+" - "+e.getMessage());
         e.printStackTrace();
     }
 
     public void onIOException(IOException e, final Object state) {
-        Log.e("Facebook", e.getMessage());
+      //  Log.e("Facebook", e.getMessage());
+    	Microlog4Android.logger.error("Facebook"+" - "+e.getMessage());
         e.printStackTrace();
     }
 
     public void onMalformedURLException(MalformedURLException e,
                                         final Object state) {
-        Log.e("Facebook", e.getMessage());
+       // Log.e("Facebook", e.getMessage());
+    	Microlog4Android.logger.error("Facebook"+" - "+e.getMessage());
         e.printStackTrace();
     }
     
