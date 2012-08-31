@@ -52,6 +52,10 @@ public class Intro extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		/**
+		 * microlog4 android initialize
+		 */
+		Microlog4Android.init(getString(R.string.log_packagename),getString(R.string.log_appender));
 		
 		mFacebook = new Facebook(Var.APP_ID);
 		
@@ -75,14 +79,7 @@ public class Intro extends Activity {
 			loginButton.setOnClickListener(buttonClickListener);
 		}
 		
-		/**
-		 * microlog4 android initialize
-		 */
-		Microlog4Android.init(getString(R.string.log_appender));
-		//test log
-		
-		Microlog4Android.logger.info("Succesed");
-		
+	
 	}
 	
 	/**
